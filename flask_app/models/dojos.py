@@ -76,3 +76,18 @@ class Dojo():
 
     
 
+# validating emails
+# import re	# the regex module
+# # create a regular expression object that we'll use later   
+# EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$') 
+# class User:
+#     @staticmethod
+#     def validate_user( user ):
+#         is_valid = True
+#         # test whether a field matches the pattern
+#         if not EMAIL_REGEX.match(user['email']): 
+#               Say we want to categorize flash messages into different labels or               buckets. We can utilize categories by passing a second argument in the flash function:
+#             flash("Invalid email address!", "email")
+#             is_valid = False
+#         return is_valid
+
