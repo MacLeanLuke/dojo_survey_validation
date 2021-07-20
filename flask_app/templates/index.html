@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+  <head>
+    <title>Dojo Survey</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="static/assets/css/main.css" />
+    <noscript
+      ><link rel="stylesheet" href="static/assets/css/noscript.css"
+    /></noscript>
+  </head>
+  <body class="is-preload">
+    <!-- Sidebar -->
+    <section id="sidebar">
+      <div class="inner">
+        <nav>
+          <ul>
+            <li><a href="#intro">Welcome</a></li>
+            <li><a href="#three">Leave a survey</a></li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <!-- Intro -->
+      <section id="intro" class="wrapper style1 fullscreen fade-up">
+        <div class="inner">
+          <h1>Dojo Surveys</h1>
+          <p>Help us out by leaving a Survey!</p>
+          <ul class="actions">
+            <li><a href="#three" class="button scrolly">Survey</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Three -->
+      <section id="three" class="wrapper style1 fade-up">
+        <div class="inner">
+          <h2>Leave a Survey</h2>
+          <p>
+            Your surveys help us improve our processes and educational material.
+          </p>
+          <div class="split style1">
+            <section>
+              {% with messages = get_flashed_messages() %}
+              <!-- declare a variable called messages -->
+              {% if messages %}
+              <!-- check if there are any messages -->
+              {% for message in messages %}
+              <!-- loop through the messages -->
+              <p>{{message}}</p>
+              <!-- display each message in a paragraph tag -->
+              {% endfor %} {% endif %}{% endwith %}
+              <form method="POST" action="/dojo/create">
+                <div class="fields">
+                  <div class="field">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" />
+                  </div>
+                  <div class="field half">
+                    <select name="location" id="demo-category">
+                      <option value="">- Location -</option>
+                      <option value="San Jose">San Jose</option>
+                      <option value="Dallas">Dallas</option>
+                      <option value="Chicago">Chicago</option>
+                      <option value="New York">New York</option>
+                    </select>
+                  </div>
+                  <div class="field half">
+                    <select name="language" id="demo-category">
+                      <option value="">- Language -</option>
+                      <option value="Python">Python</option>
+                      <option value="Java">Java</option>
+                      <option value="C#">C#</option>
+                      <option value="Ruby">Ruby</option>
+                    </select>
+                  </div>
+                  <div class="field">
+                    <label for="comment">Comment (Optional):</label>
+                    <textarea name="comment" id="message" rows="5"></textarea>
+                  </div>
+                </div>
+                <ul class="actions">
+                  <li><a href="" class="button submit">Submit</a></li>
+                </ul>
+              </form>
+            </section>
+            <section>
+              <ul class="contact">
+                <li>
+                  <h3>Social</h3>
+                  <ul class="icons">
+                    <li>
+                      <a
+                        href="https://www.linkedin.com/in/luke-maclean/"
+                        class="icon brands fa-linkedin-in"
+                        ><span class="label">LinkedIn</span></a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://github.com/MacLeanLuke"
+                        class="icon brands fa-github"
+                        ><span class="label">GitHub</span></a
+                      >
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </section>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer" class="wrapper style1-alt">
+      <div class="inner">
+        <ul class="menu">
+          <li>&copy; Untitled. All rights reserved.</li>
+          <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="static/assets/js/jquery.min.js"></script>
+    <script src="static/assets/js/jquery.scrollex.min.js"></script>
+    <script src="static/assets/js/jquery.scrolly.min.js"></script>
+    <script src="static/assets/js/browser.min.js"></script>
+    <script src="static/assets/js/breakpoints.min.js"></script>
+    <script src="static/assets/js/util.js"></script>
+    <script src="static/assets/js/main.js"></script>
+  </body>
+</html>
